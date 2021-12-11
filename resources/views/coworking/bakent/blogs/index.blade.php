@@ -5,7 +5,6 @@
     <div class="page-title-wrapper">
         <div class="page-title-heading">
             <div class="page-title-icon">
-<<<<<<< HEAD
                 <i class="lnr-book icon-gradient bg-warm-flame">
                 </i>
             </div>
@@ -22,25 +21,11 @@
                 </button>
             </a>
         </div>
-=======
-                <i class="lnr-user icon-gradient bg-warm-flame">
-                </i>
-                {{--
-                <img src="{{Auth::user()->avatar()}}">
-                    --}}
-                </img>
-            </div>
-            <div>
-                ¡{{Auth::user()->name}}  Bienvenido!
-            </div>
-        </div>
->>>>>>> solucion Multi aAuth en coworkin  con roles admin|socio|invitado
     </div>
 </div>
 <div class="p-large">
     <div class="content">
         <div class="desarrollo">
-<<<<<<< HEAD
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover  dataTables-example">
                     <thead>
@@ -120,11 +105,6 @@
                     </tbody>
                 </table>
             </div>
-=======
-            pantalla de preguntas y respuestas
-            @include('coworking.bakent.questions.partials.form')
->>>>>>> solucion Multi aAuth en coworkin  con roles admin|socio|invitado
-        </div>
     </div>
 </div>
 @endsection

@@ -83,20 +83,13 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             @endguest
         </div>
         <script src="http://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" type="text/javascript">
         </script>
         <script>
             $(document).ready( function () {
-=======
-        @endguest
-    </div>
-<script type="text/javascript" src="http://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-  <script>
-      $(document).ready( function () {
->>>>>>> solucion Multi aAuth en coworkin  con roles admin|socio|invitado
+
           $('.dataTables-example').DataTable({
               "language": {
                   "emptyTable":     "No existen datos disponibles en la tabla",
@@ -123,7 +116,7 @@
               }
           });
       });
-<<<<<<< HEAD
+
         </script>
         {{--  --}}
         <script type="text/javascript">
@@ -136,9 +129,4 @@
         </script>
         @yield('js')
     </body>
-=======
-  </script>
-    @yield('js')
-</body>
->>>>>>> solucion Multi aAuth en coworkin  con roles admin|socio|invitado
 </html>
