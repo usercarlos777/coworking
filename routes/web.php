@@ -26,6 +26,7 @@ Route::get('/Intercambios', 'WebController@change')->name('change');
 Route::get('/Ayuda', 'WebController@help')->name('help');
 Route::get('/Blog', 'WebController@blog')->name('blog');
 
+Route::get('/Blog-Mas/{id}', 'WebController@showBlog');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/user-perfil', 'WebController@userPerfil');

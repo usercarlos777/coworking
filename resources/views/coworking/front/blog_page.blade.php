@@ -6,7 +6,7 @@
     <!-- Jumbotron -->
     <div class="p-3 text-center bg-light shadow-5 rounded mb-5" id="intro">
         <h1 class="mb-3 h2">
-            blog page
+            {{ $blog->title  }}
         </h1>
     </div>
     <!-- Jumbotron -->
@@ -17,10 +17,11 @@
     <div class="row">
         <div class="col-lg-4 col-md-12 mb-4">
             <ul>
+                @foreach ($blogs as $item )
                 <li>
                     <div class="card">
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"/>
+                            <img class="img-fluid" src="{{ url('img/blog_images/'.$item->url_img)  }}"/>
                             <a href="#!">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
                                 </div>
@@ -28,93 +29,24 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">
-                                Post title
+                                {{ $item->title }}
                             </h5>
                             <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                          card's content.
+                                {{ $item->abstract }}
                             </p>
-                            <a class="btn btn-info" href="#!">
+                            <a class="btn btn-info" href="{{ url('Blog-Mas/'.$item->id)  }}">
                                 leer mas
                             </a>
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"/>
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Post title
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                          card's content.
-                            </p>
-                            <a class="btn btn-info" href="#!">
-                                leer mas
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"/>
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Post title
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                          card's content.
-                            </p>
-                            <a class="btn btn-info" href="#!">
-                                leer mas
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"/>
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Post title
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                          card's content.
-                            </p>
-                            <a class="btn btn-info" href="#!">
-                                leer mas
-                            </a>
-                        </div>
-                    </div>
-                </li>
+                @endforeach
             </ul>
         </div>
         <div class="col-lg-8 col-md-6 mb-4">
             <div class="card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"/>
+                    <img class="img-fluid" src="{{ url('img/blog_images/'.$blog->url_img)  }}"/>
                     <a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
                         </div>
@@ -122,15 +54,11 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">
-                        Post title
+                        {{$blog->title}}
                     </h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk of the
-                          card's content.
+                        {!! $blog->content !!}
                     </p>
-                    <a class="btn btn-info" href="#!">
-                        leer mas
-                    </a>
                 </div>
             </div>
         </div>
