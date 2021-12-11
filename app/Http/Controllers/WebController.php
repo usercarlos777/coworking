@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use App\Blog;
 
 class WebController extends Controller
 {
@@ -26,7 +27,8 @@ class WebController extends Controller
 
     public function blog()
     {
-        return view('coworking.front.blog');
+        $blogs = Blog::all();
+        return view('coworking.front.blog', compact('blogs'));
     }
 
     public function change()

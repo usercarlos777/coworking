@@ -24,11 +24,9 @@
 
   <!--Main Navigation-->
   @include('coworking.front.template.partials.menu')
+
   <!--Main layout-->
-  <main class="rmy-5">
-@include('coworking.front.template.partials.menu')
-  <!--Main layout-->
-  <main class=rmy-5">
+  <main class="my-5 pt-5">
     <div class="container">
          @yield('content')
     </div>

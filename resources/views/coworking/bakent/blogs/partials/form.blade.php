@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="row">
     <div class="col-lg-10">
         <fieldset>
@@ -70,6 +69,4 @@
         </fieldset>
     </div>
 </div>
-=======
-@include('coworking.bakent.partials.btnForm')
->>>>>>> solucion Multi aAuth en coworkin  con roles admin|socio|invitado
+

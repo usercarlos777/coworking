@@ -1,21 +1,11 @@
       <!--Main Navigation-->
       <header>
-          <!-- Intro settings -->
-          <style>
-              #intro {
-                  < !--Main Navigation--><header>< !-- Intro settings --><style>#intro {
-
-                      /* Margin to fix overlapping fixed navbar */
-                      margin-top: 100px;
-                  }
-
-          </style>
-
           <!-- Navbar -->
-          <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+          <div class="container-fluid">
               <!-- Navbar brand -->
-              <a class='rnavbar-brand"' href="#" target="_blank">
-                  <img <="" a="" alt="" height="55px" loading="lazy" src="{{ asset('img/logo.png') }}"
+              <a class='rnavbar-brand"' href="#">
+                  <img alt="" height="55px" loading="lazy" src="{{ asset('img/logo.png') }}"
                       style="margin-top: -3px;">
                   <button aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation"
                       class="navbar-toggler" data-mdb-target="#navbarExample01" data-mdb-toggle="collapse"
@@ -31,17 +21,17 @@
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="{{route('change')}}" rel="nofollow" target="_blank">
+                              <a class="nav-link" href="{{route('change')}}" rel="nofollow">
                                   Intercambios
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="{{route('blog')}}" target="_blank">
+                              <a class="nav-link" href="{{route('blog')}}" >
                                   Blog
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="{{route('help')}}" target="_blank">
+                              <a class="nav-link" href="{{route('help')}}" >
                                   Ayuda
                               </a>
                           </li>
@@ -96,13 +86,13 @@
                               </a>
                           </li>
                           <li class="nav-item me-3 me-lg-0">
-                              <a class="nav-link" href="" rel="nofollow" target="_blank">
+                              <a class="nav-link" href="" rel="nofollow" >
                                   <i class="fab fa-twitter">
                                   </i>
                               </a>
                           </li>
                           <li class="nav-item me-3 me-lg-0">
-                              <a class="nav-link" href="" rel="nofollow" target="_blank">
+                              <a class="nav-link" href="" rel="nofollow">
                                   <i class="fab fa-instagram">
                                   </i>
                               </a>
@@ -117,6 +107,7 @@
                       </ul>
                       @endif
                   </div>
+                </div>
           </nav>
           <!-- Navbar -->
       </header>

@@ -39,28 +39,11 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
             $table->string('faceboock')->nullable();
             $table->string('instagram')->nullable();
-<<<<<<< HEAD
-<<<<<<< HEAD
             $table->string('whatsapp')->nullable();
-=======
-            $table->string('whatssap')->nullable();
->>>>>>> adicionar modelo de noticias
-=======
-            $table->string('whatsapp')->nullable();
->>>>>>> borrado de fils sin uso
             $table->integer('count_like')->nullable();
             $table->integer('count_dislike')->nullable();
             $table->boolean('terms_conditions')->default('0');
             $table->rememberToken();
-            $table->timestamps();
-        });
-
-
-        Schema::create('ikigais', function (Blueprint $table) {
-            $table->id();
-            $table->integer('count');
-            $table->double('count_money');
-            $table->integer('user_id');
             $table->timestamps();
         });
 
@@ -120,17 +103,13 @@ class CreateUsersTable extends Migration
         Schema::create('question_and_answers', function (Blueprint $table) {
             $table->id();
             $table->string('question');
-<<<<<<< HEAD
             $table->string('answer');
-=======
-            $table->string('ansver');
->>>>>>> adicionar modelo de noticias
             $table->integer('order');
             $table->boolean('status')->default('1');
             $table->timestamps();
         });
 
-          Schema::create('news', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('abstract');
@@ -140,7 +119,7 @@ class CreateUsersTable extends Migration
             $table->boolean('status')->default('1');
             $table->timestamps();
         });
-           Schema::create('category_products', function (Blueprint $table) {
+        Schema::create('category_products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
@@ -166,9 +145,5 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users_products_services');
         Schema::dropIfExists('questions_and_amswers');
         Schema::dropIfExists('news');
-<<<<<<< HEAD
-        Schema::dropIfExists('catgory_products');
-=======
->>>>>>> borrado de fils sin uso
     }
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="row">
     <div class="col-lg-10">
         <fieldset>
