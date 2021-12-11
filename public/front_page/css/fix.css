@@ -1,0 +1,30 @@
+/* addd styles custom template*/
+.user_file_icon{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: absolute;
+    left: 78%;
+    top: -100px;
+    border: solid 8px white;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+ul{
+    list-style:none;
+}
+li{
+    margin: 1em 0 1em 0;
+}
+
+.span-title{
+    display: block;
+    text-align: center;
+    color: gray;
+}
+.fix-btn-login{
+    margin-top: 3px !important;
+}
