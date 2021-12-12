@@ -12,4 +12,4 @@
     <!-- MDB -->
     <script type="text/javascript" src="{{ asset('front_page/js/mdb.min.js') }}"></script>
     <!-- Custom scripts -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="{{asset('front_page/js/fix.js')  }}"></script>
