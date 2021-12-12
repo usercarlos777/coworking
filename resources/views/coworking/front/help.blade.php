@@ -19,7 +19,7 @@
 
     <div class="row">
 
-        @foreach($questions as $question)
+        @forelse($questions as $question)
         <div class="col-lg-6 mb-4">
             <div class="card">
                 <div class="card-body">
@@ -38,7 +38,9 @@
     </div>
     <div class="row">
         @endif
-        @endforeach
+        @empty
+        No hay preguntas ..
+        @endforelse
     </div>
 </section>
 <!--Section: Content-->

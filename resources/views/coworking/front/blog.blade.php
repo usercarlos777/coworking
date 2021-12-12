@@ -16,7 +16,7 @@
 <!--Section: Content-->
 <section class="text-center">
     <div class="row">
-         @foreach($blogs as $blog)
+         @forelse($blogs as $blog)
         <div class="col-lg-4 col-md-12 mb-4">
             <div class="card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
@@ -38,7 +38,9 @@
             </div>
             <div class="row">
         @endif
-    @endforeach
+        @empty
+        No hay blogs..
+    @endforelse
     </div>
 </section>
 <!--Section: Content-->
