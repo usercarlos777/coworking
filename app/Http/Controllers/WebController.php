@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
-use Illuminate\Http\Request;
 use App\Blog;
+use App\Product;
+use App\QuestionAndAnswer;
+use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
@@ -22,7 +23,8 @@ class WebController extends Controller
 
     public function help()
     {
-        return view('coworking.front.help');
+        $questions = QuestionAndAnswer::all();
+        return view('coworking.front.help', compact('questions'));
     }
 
     public function blog()
@@ -44,11 +46,6 @@ class WebController extends Controller
     {
         return view('coworking.front.change_page');
     }
-    public function blogView()
-    {
-        return view('coworking.front.blog_page');
-    }
-
     // Funciones  de  Perfil  de  Usuario
 
     public function userPerfil()
