@@ -28,3 +28,9 @@ li{
 .fix-btn-login{
     margin-top: 3px !important;
 }
+.btn-primary{
+    background-color:#0F6482;
+}
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover{
+   background-color: #00E2CC;
+}
