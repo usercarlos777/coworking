@@ -30,6 +30,7 @@ Route::get('/Blog-Mas/{id}', 'WebController@showBlog');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/user-perfil', 'WebController@userPerfil');
+    Route::post('/user-update/{id}', 'WebController@updateUser');
 });
 /**
 

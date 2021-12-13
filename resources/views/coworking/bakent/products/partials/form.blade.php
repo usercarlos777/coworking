@@ -47,7 +47,7 @@
              <div class="form-group row{{ $errors->has('type') ? 'has-error' : ''}}">
                 {{ Form::label('type', 'Tipo: ', ['class' => 'col-md-4 form-control-label text-md-right']) }}
                 <div class="col-md-7">
-                    {{ Form::select('type', ['Producto' => 'producto', 'Servicio' => 'servicio'], ['class' => 'form-control ', 'placeholder'=>"Tipo"]) }}
+                    {{ Form::select('type', ['Producto' => 'producto', 'Servicio' => 'servicio','Regalo'=> 'regalo'], ['class' => 'form-control ', 'placeholder'=>"Tipo"]) }}
                     {!! $errors->first('type', '
                     <p class="help-block">
                         :message

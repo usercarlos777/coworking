@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\News;
+use App\User;
 use App\Product;
 use App\QuestionAndAnswer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class WebController extends Controller
 {
@@ -50,6 +54,34 @@ class WebController extends Controller
 
     public function userPerfil()
     {
-        return view('coworking.front.user_perfil');
+        $news = News::all();
+        return view('coworking.front.user_perfil', compact('news'));
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+
+        /*
+        TODO:
+          revisar  el update  desde las vistas con la multi coneccion de basede datos
+        */
+        $user = User::find($id);
+        $fields = $request->all();
+
+        $v = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'name2' => 'required|string',
+            'surname' => 'required|string',
+            'surname2' => 'required|string',
+        ]);
+        if ($v && $v->fails()) {
+            return redirect()->back()->withInput()->withErrors($v->errors());
+        }
+        User::updateDataWithMedia($id, $fields, 'user');
+
+        Session::flash('flash_message', 'Se ha actualizado el Usuario');
+        Session::flash('flash_message_type', 'success');
+
+        return redirect('/');
     }
 }

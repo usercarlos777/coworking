@@ -12,8 +12,12 @@ use Illuminate\Support\Facades\DB;
 class User extends Authenticatable
 {
     use Notifiable;
+    use GenericClassWithMedia;
     protected $connection = 'users';
     protected $table = 'users';
+
+    protected $images_attr = ['avatar', 'banner'];
+    protected $folder_images = 'users_images';
     /**
      * The attributes that are mass assignable.
      *
@@ -63,10 +67,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function ikigais()
-    {
-        return $this->hasMany(Ikigai::class);
-    }
     public function comments()
     {
         return $this->hasMany(Comment::class);
