@@ -17,10 +17,11 @@
     <div class="row">
         <div class="col-lg-4 col-md-12 mb-4">
             <ul>
+                @forelse ( $news as $new )
                 <li>
                     <div class="card">
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" />
+                            <img class="img-fluid" src="{{ url('img/news_images/'.$new->url_img)  }}" />
                             <a href="#!">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
                                 </div>
@@ -28,11 +29,10 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">
-                                Post title
+                                {{$new->title}}
                             </h5>
                             <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                                card's content.
+                                {{$new->abstract}}
                             </p>
                             <a class="btn btn-info" href="#!">
                                 leer mas
@@ -40,78 +40,13 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Post title
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                                card's content.
-                            </p>
-                            <a class="btn btn-info" href="#!">
-                                leer mas
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Post title
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                                card's content.
-                            </p>
-                            <a class="btn btn-info" href="#!">
-                                leer mas
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Post title
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                                card's content.
-                            </p>
-                            <a class="btn btn-info" href="#!">
-                                leer mas
-                            </a>
-                        </div>
-                    </div>
-                </li>
+                @empty
+                No hay Noticias...
+                @endforelse
+               
             </ul>
         </div>
-        <?php $user = Auth::user() ?> 
+        <?php $user = Auth::user() ?>
         <div class="col-lg-8 col-md-6 mb-4">
             <form action="{{url('/user-update/'.$user->id)  }}" method="POST" enctype="multipart/form-data">
                    @csrf
@@ -157,20 +92,40 @@
                     <input type="file" class="form-control" id="avatar" name="avatar"/>
                 </div>
 
-                 <div class=" mb-4">
+                 {{-- <div class=" mb-4">
                     <label class="form-label" for="banner">Baner de Usuario</label>
                     <input type="file" class="form-control" id="banner" name="banner" />
-                </div>
+                </div> --}}
 
                 <!-- Message input -->
                 <div class="form-outline mb-4">
-                    <textarea class="form-control" id="general_presentation" rows="4"></textarea>
+                    <textarea class="form-control" id="general_presentation" rows="4" name="general_presentation"></textarea>
                     <label class="form-label" for="general_presentation">Precentacion</label>
                 </div>
 
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">Actualizar Datos De Usuario</button>
             </form>
+
+            <h2>Datos de Usuario</h2>
+
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{url('img/users_images/'.$user->avatar)  }}" alt="..." class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $user->full_name_add }}</h5>
+                    <p class="card-text">
+                      {{$user->general_presentation}}
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{$user->profession}}</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            
         </div>
     </div>
 </section>
