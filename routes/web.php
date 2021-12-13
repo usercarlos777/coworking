@@ -27,6 +27,7 @@ Route::get('/Ayuda', 'WebController@help')->name('help');
 Route::get('/Blog', 'WebController@blog')->name('blog');
 
 Route::get('/Blog-Mas/{id}', 'WebController@showBlog');
+Route::get('/News-Mas/{id}', 'WebController@showNews');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/user-perfil', 'WebController@userPerfil');

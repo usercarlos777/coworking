@@ -41,6 +41,12 @@ class WebController extends Controller
         $blogs = Blog::all();
         return view('coworking.front.blog_page', compact('blog', 'blogs'));
     }
+    public function showNews($id)
+    {
+        $new = News::find($id);
+        $news = News::all();
+        return view('coworking.front.news_page', compact('new', 'news'));
+    }
     public function change()
     {
         return view('coworking.front.change');

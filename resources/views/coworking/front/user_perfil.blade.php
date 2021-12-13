@@ -34,7 +34,7 @@
                             <p class="card-text">
                                 {{$new->abstract}}
                             </p>
-                            <a class="btn btn-info" href="#!">
+                            <a class="btn btn-info" href="{{ url('News-Mas/'.$new->id)  }}">
                                 leer mas
                             </a>
                         </div>
