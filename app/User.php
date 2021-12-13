@@ -16,8 +16,6 @@ class User extends Authenticatable
     protected $connection = 'users';
     protected $table = 'users';
 
-    protected $images_attr = ['avatar', 'banner'];
-    protected $folder_images = 'users_images';
     /**
      * The attributes that are mass assignable.
      *
@@ -54,6 +52,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $images_attr = ['avatar', 'banner'];
+    protected $folder_images = 'users_images';
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -90,5 +90,10 @@ class User extends Authenticatable
     public function getFullNameAttribute()
     {
         return $this->name . ' ' . $this->surname;
+    }
+
+    public function getFullNameAddAttribute()
+    {
+        return $this->name . ' ' . $this->name2 . ' ' . $this->surname . ' ' . $this->surname2;
     }
 }
