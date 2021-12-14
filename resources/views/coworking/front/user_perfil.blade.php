@@ -34,7 +34,7 @@
                             <p class="card-text">
                                 {{$new->abstract}}
                             </p>
-                            <a class="btn btn-info" href="{{ url('News-Mas/'.$new->id)  }}">
+                            <a class="btn btn-info" href="#!">
                                 leer mas
                             </a>
                         </div>
@@ -43,7 +43,6 @@
                 @empty
                 No hay Noticias...
                 @endforelse
-               
             </ul>
         </div>
         <?php $user = Auth::user() ?>
@@ -107,15 +106,19 @@
                 <button type="submit" class="btn btn-primary btn-block mb-4">Actualizar Datos De Usuario</button>
             </form>
 
-            <h2>Datos de Usuario</h2>
-
+<!-- Jumbotron -->
+    <div class="p-3 text-center bg-light shadow-5 rounded mb-5" id="intro">
+        <h1 class="mb-3 h2">
+            <h3 class="fw-light text-uppercase fs-5 text">Datos de Perfil</h3>
+        </h1>
+    </div>
               <div class="row g-0">
                 <div class="col-md-4">
                   <img src="{{url('img/users_images/'.$user->avatar)  }}" alt="..." class="img-fluid">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">{{ $user->full_name_add }}</h5>
+                    <h5 class="card-title">{{ $user->full_name }}</h5>
                     <p class="card-text">
                       {{$user->general_presentation}}
                     </p>
@@ -125,7 +128,6 @@
                   </div>
                 </div>
               </div>
-            
         </div>
     </div>
 </section>
