@@ -22,7 +22,12 @@
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="{{route('change')}}" rel="nofollow">
-                                  Intercambios
+                                  Productos
+                              </a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="{{route('change')}}" rel="nofollow">
+                                  Servicios
                               </a>
                           </li>
                           <li class="nav-item">

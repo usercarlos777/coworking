@@ -47,6 +47,12 @@ class WebController extends Controller
         $news = News::all();
         return view('coworking.front.news_page', compact('new', 'news'));
     }
+    /**
+     *
+     * TODO:
+     * cambios con los productos y servicios
+     *
+     */
     public function change()
     {
         return view('coworking.front.change');
